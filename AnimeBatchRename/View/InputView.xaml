@@ -1,0 +1,15 @@
+﻿<Window x:Class="AnimeBatchRename.View.InputView"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Background="LightGray"  ResizeMode="NoResize" SizeToContent="Height" Width="320" WindowStartupLocation="CenterOwner">
+	<!-- Begin:Contents -->
+	<StackPanel Margin="4">
+		<!-- Begin:Input -->
+		<TextBox KeyDown="_OnKeyDown" Name="Input" />
+		<!-- End:Input -->
+		<!-- Begin:OK -->
+		<Button Content="OK" Click="_OnOK" Margin="0,4,0,0" />
+		<!-- End:OK -->
+	</StackPanel>
+	<!-- End:Contents -->
+</Window>

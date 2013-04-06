@@ -1,0 +1,94 @@
+﻿<Window x:Class="AnimeBatchRename.View.MainView"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Background="LightGray" Height="360" ResizeMode="CanMinimize" Title="AnimeBatchRename" Width="640" WindowStartupLocation="CenterScreen">
+	<!-- Begin:Contents -->
+	<Grid Margin="4">
+		<!-- Begin:RowDefinitions -->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<!-- EndBegin:RowDefinitions -->
+		<TextBox Margin="0,0,0,4" TextAlignment="Center" FontSize="14">
+			<TextBox.Text>
+				<Binding Path="Title" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" />
+			</TextBox.Text>
+		</TextBox>
+		<!-- Begin:Preview -->
+		<DataGrid AutoGenerateColumns="False" Background="White" CanUserAddRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" Grid.Row="1" GridLinesVisibility="Horizontal" Name="DataGrid" RowHeaderWidth="0">
+			<DataGrid.CellStyle>
+				<Style TargetType="DataGridCell">
+					<Setter Property="BorderThickness" Value="0"/>
+				</Style>
+			</DataGrid.CellStyle>
+			<!-- Begin:Preview:ContextMenu -->
+			<DataGrid.ContextMenu>
+				<ContextMenu>
+					<MenuItem Click="_OnChangeEpisode" Header="Change Episode" />
+					<MenuItem Click="_OnChangeSeason" Header="Change Season" />
+					<MenuItem Click="_OnChangeTranslationGroup" Header="Change Translation Group" />
+				</ContextMenu>
+			</DataGrid.ContextMenu>
+			<!-- End:Preview:ContextMenu -->
+			<!-- Begin:Preview:Columns -->
+			<DataGrid.Columns>
+				<!-- Begin:Preview:Columns:FileName -->
+				<DataGridTextColumn Header="File Name" IsReadOnly="True" Width="*">
+					<DataGridTextColumn.Binding>
+						<Binding Path="FileName" />
+					</DataGridTextColumn.Binding>
+				</DataGridTextColumn>
+				<!-- End:Preview:Columns:FileName -->
+				<!-- Begin:Preview:Columns:SeasonNumber -->
+				<DataGridTextColumn Header="Season">
+					<DataGridTextColumn.Binding>
+						<Binding Path="SeasonNumber" />
+					</DataGridTextColumn.Binding>
+					<DataGridTextColumn.ElementStyle>
+						<Style TargetType="{x:Type TextBlock}">
+							<Setter Property="HorizontalAlignment" Value="Center" />
+						</Style>
+					</DataGridTextColumn.ElementStyle>
+				</DataGridTextColumn>
+				<!-- End:Preview:Columns:SeasonNumber -->
+				<!-- Begin:Preview:Columns:EpisodeNumber -->
+				<DataGridTextColumn Header="Episode">
+					<DataGridTextColumn.Binding>
+						<Binding Path="EpisodeNumber" />
+					</DataGridTextColumn.Binding>
+					<DataGridTextColumn.ElementStyle>
+						<Style TargetType="{x:Type TextBlock}">
+							<Setter Property="HorizontalAlignment" Value="Center" />
+						</Style>
+					</DataGridTextColumn.ElementStyle>
+				</DataGridTextColumn>
+				<!-- End:Preview:Columns:EpisodeNumber -->
+				<!-- Begin:Preview:Columns:TranslationGroup -->
+				<DataGridTextColumn Header="Translation Group">
+					<DataGridTextColumn.Binding>
+						<Binding Path="TranslationGroup" />
+					</DataGridTextColumn.Binding>
+					<DataGridTextColumn.ElementStyle>
+						<Style TargetType="{x:Type TextBlock}">
+							<Setter Property="HorizontalAlignment" Value="Center" />
+						</Style>
+					</DataGridTextColumn.ElementStyle>
+				</DataGridTextColumn>
+				<!-- End:Preview:Columns:TranslationGroup -->
+			</DataGrid.Columns>
+			<!-- End:Preview:Columns -->
+			<!-- Begin:Preview:ItemsSource -->
+			<DataGrid.ItemsSource>
+				<Binding Path="Files" />
+			</DataGrid.ItemsSource>
+			<!-- End:Preview:ItemsSource -->
+		</DataGrid>
+		<!-- End:Preview -->
+		<!-- Begin:Commit -->
+		<Button Content="Commit Changes" Click="_OnCommit" Grid.Row="2" Margin="0,4,0,0" />
+		<!-- End:Commit -->
+	</Grid>
+	<!-- End:Contents -->
+</Window>

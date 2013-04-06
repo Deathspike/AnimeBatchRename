@@ -1,0 +1,12 @@
+*/Build
+*/bin
+*/obj
+
+*.bat
+*.config
+*.exe
+*.manifest
+*.pdb
+*.suo
+*.user
+*.xml
