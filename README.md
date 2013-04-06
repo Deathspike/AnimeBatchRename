@@ -4,15 +4,15 @@ Batch renames files from anime notation to TV series notation.
 
 ## Requirements
 
-  1. *Windows XP SP3* or a more recent *Windows* operating system.
-  2. .NET Platform 4.0 or higher.
+  1. *Microsoft Windows XP SP3* or better.
+  2. *Microsoft .NET Platform 4.0* or better.
 
 ## Installation
 
-  1. Download *AnimeBatchRename.zip* from *Build*.
+  1. Download [AnimeBatchRename.zip](https://github.com/Deathspike/AnimeBatchRename/raw/master/Build/AnimeBatchRename.zip).
   2. Extract the contents of the archive to a permanenent location.
-  3. Run the *.bat* file to register the application to the Windows context menu.
-  4. Right-click in a folder containing anime files and select *Anime Batch Name* to rename.
+  3. Run the *.bat* file to register the application to the windows folder context menu.
+  4. Right-click in a folder containing the anime files and select *Anime Batch Name* to start *AnimeBatchRename*.
 
 ## Instructions
 
