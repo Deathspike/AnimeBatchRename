@@ -26,7 +26,7 @@ namespace AnimeBatchRename.Model {
 				// Set the directory name.
 				DirectoryName = Path.GetDirectoryName(FilePath);
 				// Set the episode number.
-				EpisodeNumber = Match.Groups["EpisodeNumber"].Value.Trim().AsNumeric();
+				EpisodeNumber = Match.Groups["EpisodeNumber"].Value.Replace(',', '.').Trim().AsNumeric();
 				// Set the extension.
 				Extension = Path.GetExtension(FilePath);
 				// Set the file name.
