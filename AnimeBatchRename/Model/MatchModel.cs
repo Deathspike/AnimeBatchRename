@@ -19,11 +19,11 @@ namespace AnimeBatchRename.Model {
 				// Return each expression.
 				return new List<Regex> {
 					// [NanohaFan] Mahou Shoujo Lyrical Nanoha (1x)04 - A Rival!? Another Magical Girl!
-					new Regex(@"^(\[(?<TranslationGroup>.+?)\])(.*?)(_|\s)((?<SeasonNumber>[0-9]+)x)?(?<EpisodeNumber>[0-9]+(\.|,)?([0-9]+)?)"),
+					new Regex(@"^(\[(?<TranslationGroup>.+?)\])(.*?)(_|\s)((?<SeasonNumber>[0-9]+)x)?(Ep)?(?<EpisodeNumber>[0-9]+(\.|,)?([0-9]+)?)", RegexOptions.IgnoreCase),
 					// Mahou Shoujo Lyrical Nanoha (1x)04 - A Rival!? Another Magical Girl! [NanohaFan]
-					new Regex(@"(_|\s)((?<SeasonNumber>[0-9]+)x)?(?<EpisodeNumber>[0-9]+(\.|,)?[0-9]+?)(.*)(\[(?<TranslationGroup>[^\[]+?)\])$"),
+					new Regex(@"(_|\s|\.)((?<SeasonNumber>[0-9]+)x)?(Ep)?(?<EpisodeNumber>[0-9]+(\.|,)?[0-9]+?)(.*)(\[(?<TranslationGroup>[^\[]+?)\])$", RegexOptions.IgnoreCase),
 					// Mahou Shoujo Lyrical Nanoha (1x)04 - A Rival!? Another Magical Girl!
-					new Regex(@"(_|\s)((?<SeasonNumber>[0-9]+)x)?(?<EpisodeNumber>[0-9]+(\.|,)?[0-9]+?)(.*)?$")
+					new Regex(@"(_|\s|\.)((?<SeasonNumber>[0-9]+)x)?(Ep)?(?<EpisodeNumber>[0-9]+(\.|,)?[0-9]+?)(.*)?$", RegexOptions.IgnoreCase)
 				};
 			}
 		}
